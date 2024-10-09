@@ -18,12 +18,6 @@ nav{
     color: #05445e;
 }
 
-/*Especificidad 011*/
-a[class="activo"]{
-    font-weight: 600;
-    font-size: 1.3em;
-}
-
 /*Especificidad 001*/
 h1{
     color: #05445e;
@@ -31,13 +25,13 @@ h1{
 
 /*Especificidad 002*/
 h1 a{
-    font-size: 2em;
+    font-size: 1.5em;
     text-decoration: none;
 }
 
 /*Especificidad 001*/
 h2 {
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 800;
 }
 
@@ -52,25 +46,12 @@ a[title]{
     font-style: italic;
 }
 
-/*Especificidad 011*/
-body p:first-of-type{
+/*Especificidad 012*/
+main > p:first-of-type{
     font-size: 0.85em;
 }
 
-/*Especificidad 001*/
-section{
-    font-size: 1.1em;
-}
-
-/*Especificidad 001*/
-aside{
-    font-size: 1.1em;
-}
-
-/*Especificidad 001*/
-article{
-    font-size: 1.1em;
-}
+/* Listas */
 
 /*Especificidad 001*/
 ul{
@@ -80,4 +61,74 @@ ul{
 /*Especificidad 001*/
 ol{
     list-style-type: upper-roman;
+}
+
+/*Especificidad 002*/
+ol ul{
+    list-style-type: square;
+}
+
+/*Especificidad 001*/
+dl {
+    background-color: #aaf5ee;
+    color: #032533;
+}
+
+/*Especificidad 002*/
+dl dt{
+    font-style: italic;
+}
+
+/*Especificidad 002*/
+dl dd{
+    font-size: 0.9em;
+}
+
+/* Tabla */
+
+/*Especificidad 001*/
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid rgb(15, 31, 131);
+}
+
+/*Especificidad 001*/
+th, td {
+    padding: 1em;
+    text-align: center;
+}
+
+/*Especificidad 012*/
+tbody tr:nth-child(odd) {
+    background-color: #93cbf6;
+}
+
+/*Especificidad 012*/
+tbody tr:nth-child(even) {
+    background-color: #a0e8fa;
+}
+
+/* Multimedia */
+
+/*Especificidad 001*/
+video {
+    width: 100%;
+    height: auto;
+}
+
+/*Especificidad 001*/
+picture img {
+    width: 100%;
+    height: auto;
+}
+
+/* Menú */
+
+/*Especificidad 011*/
+a[class="activo"]{
+    font-weight: 600;
+    font-size: 1.3em;
+    color: #032533;
 }
