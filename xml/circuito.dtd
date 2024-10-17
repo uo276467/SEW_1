@@ -1,13 +1,13 @@
 <!ELEMENT circuito (longitud, bibliografía, galeríaFotos, galeríaVídeos, coordenadas, puntos)>
 <!ELEMENT longitud (#PCDATA)>
-<!ELEMENT bibliografía (referencia, referencia, referencia, referencia*)>
+<!ELEMENT bibliografía (referencia+)>
 <!ELEMENT referencia (#PCDATA)>
-<!ELEMENT galeríaFotos (foto, foto?, foto?, foto?, foto?)>
+<!ELEMENT galeríaFotos (foto+)>
 <!ELEMENT foto (#PCDATA)>
-<!ELEMENT galeríaVídeos (vídeo?, vídeo?, vídeo?)>
+<!ELEMENT galeríaVídeos (vídeo*)>
 <!ELEMENT vídeo (#PCDATA)>
 <!ELEMENT coordenadas (#PCDATA)>
-<!ELEMENT puntos (tramo, tramo, tramo, tramo*)>
+<!ELEMENT puntos (tramo+)>
 <!ELEMENT tramo (distancia, coordenadas, sector)>
 <!ELEMENT distancia (#PCDATA)>
 <!ELEMENT sector (#PCDATA)>
@@ -19,6 +19,7 @@
 <!ATTLIST circuito nVueltas CDATA #REQUIRED>
 <!ATTLIST circuito localidad CDATA #REQUIRED>
 <!ATTLIST circuito país CDATA #REQUIRED>
+<!ATTLIST longitud valor CDATA #REQUIRED>
 <!ATTLIST longitud unidades CDATA #REQUIRED>
 <!ATTLIST referencia enlace CDATA #REQUIRED>
 <!ATTLIST foto enlace CDATA #REQUIRED>
@@ -26,4 +27,5 @@
 <!ATTLIST coordenadas longitud CDATA #REQUIRED>
 <!ATTLIST coordenadas latitud CDATA #REQUIRED>
 <!ATTLIST coordenadas altitud CDATA #REQUIRED>
+<!ATTLIST distancia valor CDATA #REQUIRED>
 <!ATTLIST distancia unidades CDATA #REQUIRED>

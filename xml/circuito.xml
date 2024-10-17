@@ -4,7 +4,7 @@
 <circuito nombre="Silverstone" anchura="15m" 
     fecha2024="Domingo 7 de julio" horaInicio="16:00" nVueltas="52" 
     localidad="Silverstone" país="Reino Unido">
-    <longitud unidades="km">5,901</longitud>
+    <longitud valor="5,901" unidades="km"/>
     <bibliografía>
         <referencia enlace="https://veloviewer.com/segment/655348/Silverstone+F1+Circuit"/>
         <referencia enlace="https://es.wikipedia.org/wiki/Circuito_de_Silverstone"/>
@@ -21,17 +21,17 @@
     <coordenadas longitud="-1.014818" latitud="52.073273" altitud="140m"/>
     <puntos>
         <tramo>
-            <distancia unidades="km">2,3</distancia>
+            <distancia valor="2,3" unidades="km"/>
             <coordenadas longitud="-2.014818" latitud="53.073273" altitud="142m"/>
             <sector>1</sector>
         </tramo>
         <tramo>
-            <distancia unidades="km">1,6</distancia>
+            <distancia valor="1,6" unidades="km"/>
             <coordenadas longitud="-3.014818" latitud="54.073273" altitud="145m"/>
             <sector>2</sector>
         </tramo>
         <tramo>
-            <distancia unidades="km">2</distancia>
+            <distancia valor="2" unidades="km"/>
             <coordenadas longitud="-4.014818" latitud="55.073273" altitud="142m"/>
             <sector>3</sector>
         </tramo>
