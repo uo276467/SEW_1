@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsd" href="articulos4.xsd"?>
+
+<circuito nombre="Silverstone" anchura="15.5" 
+    fecha2024="2024-07-07" horaInicio="16:00:00" nVueltas="52" 
+    localidad="Silverstone" país="Reino Unido">
+    <longitud valor="5.901" unidades="km"/>
+    <bibliografía>
+        <referencia enlace="https://veloviewer.com/segment/655348/Silverstone+F1+Circuit"/>
+        <referencia enlace="https://es.wikipedia.org/wiki/Circuito_de_Silverstone"/>
+        <referencia enlace="https://www.circuitosdecarreras.com/reino-unido/circuito-silverstone/"/>
+    </bibliografía>
+    <galeríaFotos>
+        <foto enlace="multimedia/imagenes/silverstone1.jpg"/>
+        <foto enlace="multimedia/imagenes/silverstone2.jpg"/>
+    </galeríaFotos>
+    <galeríaVídeos>
+        <vídeo enlace="multimedia/videos/silverstone1.mp3"/>
+        <vídeo enlace="multimedia/videos/silverstone2.mp3"/>
+    </galeríaVídeos>
+    <coordenadas longitud="-1.014818" latitud="52.073273" altitud="0.0"/>
+    <puntos>
+        <tramo>
+            <distancia valor="0.53" unidades="km"/>
+            <coordenadas longitud="-1.024290" latitud="52.067497" altitud="0.0"/>
+            <sector>1</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.2" unidades="km"/>
+            <coordenadas longitud="-1.019494" latitud="52.071283" altitud="0.0"/>
+            <sector>2</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.26" unidades="km"/>
+            <coordenadas longitud="-1.016555" latitud="52.071243" altitud="0.0"/>
+            <sector>3</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.14" unidades="km"/>
+            <coordenadas longitud="-1.013368" latitud="52.072536" altitud="0.0"/>
+            <sector>4</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.67" unidades="km"/>
+            <coordenadas longitud="-1.011479" latitud="52.073106" altitud="0.0"/>
+            <sector>5</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.09" unidades="km"/>
+            <coordenadas longitud="-1.018780" latitud="52.077129" altitud="0.0"/>
+            <sector>6</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.11" unidades="km"/>
+            <coordenadas longitud="-1.020003" latitud="52.076918" altitud="0.0"/>
+            <sector>7</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.05" unidades="km"/>
+            <coordenadas longitud="-1.020368" latitud="52.075929" altitud="0.0"/>
+            <sector>8</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.06" unidades="km"/>
+            <coordenadas longitud="-1.021141" latitud="52.075836" altitud="0.0"/>
+            <sector>9</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.25" unidades="km"/>
+            <coordenadas longitud="-1.021741" latitud="52.076272" altitud="0.0"/>
+            <sector>10</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.1" unidades="km"/>
+            <coordenadas longitud="-1.019960" latitud="52.078184" altitud="0.0"/>
+            <sector>11</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.48" unidades="km"/>
+            <coordenadas longitud="-1.018587" latitud="52.078579" altitud="0.0"/>
+            <sector>12</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.52" unidades="km"/>
+            <coordenadas longitud="-1.011656" latitud="52.078843" altitud="0.0"/>
+            <sector>13</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.1" unidades="km"/>
+            <coordenadas longitud="-1.010139" latitud="52.074238" altitud="0.0"/>
+            <sector>14</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.16" unidades="km"/>
+            <coordenadas longitud="-1.009499" latitud="52.073410" altitud="0.0"/>
+            <sector>15</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.13" unidades="km"/>
+            <coordenadas longitud="-1.010046" latitud="52.072049" altitud="0.0"/>
+            <sector>16</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.16" unidades="km"/>
+            <coordenadas longitud="-1.009275" latitud="52.071003" altitud="0.0"/>
+            <sector>17</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.82" unidades="km"/>
+            <coordenadas longitud="-1.010920" latitud="52.069994" altitud="0.0"/>
+            <sector>18</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.11" unidades="km"/>
+            <coordenadas longitud="-1.016964" latitud="52.063665" altitud="0.0"/>
+            <sector>19</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.42" unidades="km"/>
+            <coordenadas longitud="-1.018622" latitud="52.063735" altitud="0.0"/>
+            <sector>20</sector>
+        </tramo>    
+        <tramo>
+            <distancia valor="0.21" unidades="km"/>
+            <coordenadas longitud="-1.024290" latitud="52.065153" altitud="0.0"/>
+            <sector>21</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.07" unidades="km"/>
+            <coordenadas longitud="-1.022173" latitud="52.066551" altitud="0.0"/>
+            <sector>22</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.17" unidades="km"/>
+            <coordenadas longitud="-1.023080" latitud="52.066228" altitud="0.0"/>
+            <sector>23</sector>
+        </tramo>
+    </puntos>
+</circuito>

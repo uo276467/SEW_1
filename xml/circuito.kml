@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 2.3 km
+</description><Point><coordinates>
+-2.014818,53.073273,0.0
+</coordinates><altitudeMode>
+relativeToGround
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 1.6 km
+</description><Point><coordinates>
+-3.014818,54.073273,0.0
+</coordinates><altitudeMode>
+relativeToGround
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 2 km
+</description><Point><coordinates>
+-4.014818,55.073273,0.0
+</coordinates><altitudeMode>
+relativeToGround
+</altitudeMode></Point></Placemark></Document></kml>

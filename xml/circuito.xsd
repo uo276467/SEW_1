@@ -13,7 +13,7 @@
       <xs:attribute name="nombre" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[A-z]+"/>
+            <xs:pattern value="[a-zA-Z]+"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
@@ -36,14 +36,14 @@
       <xs:attribute name="localidad" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[A-z]+"/>
+            <xs:pattern value="[a-zA-Z]+"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
       <xs:attribute name="país" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:pattern value="[A-z]+"/>
+            <xs:pattern value="[a-zA-Z]+"/>
           </xs:restriction>
         </xs:simpleType> 
       </xs:attribute>
@@ -64,7 +64,7 @@
           <xs:attribute name="unidades" use="required">
             <xs:simpleType>
               <xs:restriction base="xs:string">
-                <xs:pattern value="k?m"/>
+                <xs:pattern value="m|km"/>
               </xs:restriction>
             </xs:simpleType> 
           </xs:attribute>
@@ -169,7 +169,7 @@
           <xs:attribute name="unidades" use="required">
             <xs:simpleType>
               <xs:restriction base="xs:string">
-                <xs:pattern value="k?m"/>
+                <xs:pattern value="m|km"/>
               </xs:restriction>
             </xs:simpleType> 
           </xs:attribute>
