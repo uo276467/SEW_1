@@ -1,7 +1,47 @@
+/*Especificidad 001*/
 header{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
+}
+
+/*Especificidad 001*/
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 2em; 
+    justify-content: center;
+}
+
+/*Especificidad 002*/
+section h3, h2 {
+    flex: 100%;
+    text-align: center;
+}
+
+/*Especificidad 002*/
+section article {
+    aspect-ratio: 3 / 4;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid gray;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/*Especificidad 012*/
+section article:hover {
+    transform: scale(1.05);
+}
+
+/*Especificidad 003*/
+section article img {
+    width: 50%;
+    height: 50%;
 }
