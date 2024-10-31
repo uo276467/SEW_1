@@ -20,6 +20,10 @@ class Memoria{
         this.lockBoard = false
         this.firstCard = null
         this.secondCard = null
+
+        this.shuffleElements()
+        this.createElements()
+        this.addEventListeners()
     }
     shuffleElements(){
         // Verificación de que elements y elements.elements están definidos y son un array
@@ -37,7 +41,12 @@ class Memoria{
         }
     }
     unflipCards(){
-        this.lockBoard = true;
+        this.lockBoard = true
+        setTimeout(() => {
+            this.firstCard.removeAttribute('data-state')
+            this.secondCard.removeAttribute('data-state')
+            this.resetBoard()
+        }, 1000)
     }
     resetBoard(){
         this.firstCard = null
@@ -46,41 +55,38 @@ class Memoria{
         this.lockBoard = false
     }
     checkForMath(){
-        if(this.firstCard === this.secondCard)
-            this.disableCards()
-        else
-            this.unflipCards()
+        this.firstCard.getAttribute("data-element") === this.secondCard.getAttribute("data-element") ? 
+            this.disableCards() : this.unflipCards()
     }
     disableCards(){
-        //datastate = revealed
+        this.firstCard.setAttribute('data-state', 'revealed')
+        this.secondCard.setAttribute('data-state', 'revealed')
         this.resetBoard();
     }
     createElements(){
         const section = document.querySelector("section")
 
         this.elements.elements.forEach(item => {
-            // Crear el artículo
+            //Crear el artículo
             const article = document.createElement("article")
-            article.setAttribute("data-element", item.element)
-            article.classList.add("card")
 
-            // Crear el encabezado
+            //Atributo data-element
+            article.setAttribute("data-element", item.element)
+
+            //Crear el encabezado
             const text = document.createElement("h3")
             text.textContent = "Tarjeta de memoria"
             article.appendChild(text)
 
-            // Crear la imagen
+            //Crear la imagen
             const image = document.createElement("img")
             image.src = item.source
             image.alt = item.element
-            image.style.display = "none" 
             article.appendChild(image)
 
-            // Añadir el artículo a la sección
+            //Añadir el artículo a la sección
             section.appendChild(article)
         });
-
-        this.addEventListeners()
     }
     addEventListeners(){
         const articles = document.querySelectorAll("section article");
@@ -89,14 +95,23 @@ class Memoria{
             card.onclick = this.flipCard.bind(card, this)
         });
     }
-    flipCard(card){
-        const text = card.querySelector("h3")
-        const image = card.querySelector("img")
-        text.style.display = "none"
-        image.style.display = "block"
+    flipCard(game){
+        if(this.getAttribute('data-state') === 'revealed')
+            return
+        if(game.lockBoard)
+            return
+        if(this === game.firstCard)
+            return
+
+        this.setAttribute('data-state', 'flip')
+        if(game.hasFlippedCard){
+            game.secondCard = this
+            game.checkForMath()
+        }else{
+            game.hasFlippedCard = true
+            game.firstCard = this
+        }
     }
 }
 
-const memoria = new Memoria()
-memoria.shuffleElements()
-memoria.createElements()
+new Memoria()
