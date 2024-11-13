@@ -26,12 +26,6 @@ class Memoria{
         this.addEventListeners()
     }
     shuffleElements(){
-        // Verificación de que elements y elements.elements están definidos y son un array
-        if (!this.elements || !Array.isArray(this.elements.elements) || this.elements.elements.length === 0) {
-            console.error("No hay elementos disponibles para mezclar.");
-            return;
-        }
-
         let array = this.elements.elements;
 
         for (let i = array.length - 1; i > 0; i--) {

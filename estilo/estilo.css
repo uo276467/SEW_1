@@ -91,7 +91,7 @@ table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    border: 3px solid rgb(15, 31, 131);
+    border: 0.2em solid rgb(15, 31, 131);
 }
 
 /*Especificidad 001*/
@@ -100,13 +100,13 @@ th, td {
     text-align: center;
 }
 
-/*Especificidad 012*/
-tbody tr:nth-child(odd) {
+/*Especificidad 011*/
+tr:nth-child(odd) {
     background-color: #93cbf6;
 }
 
-/*Especificidad 012*/
-tbody tr:nth-child(even) {
+/*Especificidad 011*/
+tr:nth-child(even) {
     background-color: #a0e8fa;
 }
 

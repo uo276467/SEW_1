@@ -18,11 +18,11 @@
         <vídeo enlace="multimedia/videos/silverstone1.mp3"/>
         <vídeo enlace="multimedia/videos/silverstone2.mp3"/>
     </galeríaVídeos>
-    <coordenadas longitud="-1.014818" latitud="52.073273" altitud="0.0"/>
+    <coordenadas longitud="-1.022263" latitud="52.069219" altitud="0.0"/>
     <puntos>
         <tramo>
-            <distancia valor="0.53" unidades="km"/>
-            <coordenadas longitud="-1.024290" latitud="52.067497" altitud="0.0"/>
+            <distancia valor="0.3" unidades="km"/>
+            <coordenadas longitud="-1.022263" latitud="52.069219" altitud="0.0"/>
             <sector>1</sector>
         </tramo>
         <tramo>
@@ -127,13 +127,18 @@
         </tramo>
         <tramo>
             <distancia valor="0.07" unidades="km"/>
-            <coordenadas longitud="-1.022173" latitud="52.066551" altitud="0.0"/>
+            <coordenadas longitud="-1.022142" latitud="52.066566" altitud="0.0"/>
             <sector>22</sector>
         </tramo>
         <tramo>
-            <distancia valor="0.17" unidades="km"/>
-            <coordenadas longitud="-1.023080" latitud="52.066228" altitud="0.0"/>
+            <distancia valor="0.13" unidades="km"/>
+            <coordenadas longitud="-1.023011" latitud="52.066236" altitud="0.0"/>
             <sector>23</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.27" unidades="km"/>
+            <coordenadas longitud="-1.024293" latitud="52.067472" altitud="0.0"/>
+            <sector>24</sector>
         </tramo>
     </puntos>
 </circuito>
