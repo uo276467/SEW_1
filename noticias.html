@@ -12,6 +12,14 @@
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/article_elements.css" />
+
+    <script src="js/noticias.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+    </script>
 
 </head>
 
@@ -35,7 +43,11 @@
 
         <section>
             <h2>Noticias</h2>
-            <p>En desarrollo</p>
+            <p><input type="file" id="archivoTexto" onchange="seleccionarArchivo()"></p>
+            <p id="contenidoArchivo"></p>
+            <pre id="areaTexto"></pre>
+            <p><input id="nueva" type="text" required minlength="1"/></p>
+            <button type="button" onclick="añadirNoticia()">Añadir noticia</button>
         </section>
         
     </main>

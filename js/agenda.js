@@ -24,8 +24,8 @@ class Agenda{
                         stringDatos += "<p>Carrera: " + carrera + "</p>"
                         stringDatos += "<p>Circuito: " + circuito + "</p>"
                         stringDatos += "<p>Coordenadas:</p>"
-                        stringDatos += "<ul><li>Latitud: " + lat + "</li>"
-                        stringDatos += "<li>Longitud: " + long + "</li></ul>"
+                        stringDatos += "<ul><li>Latitud: " + lat + "º</li>"
+                        stringDatos += "<li>Longitud: " + long + "º</li></ul>"
                         stringDatos += "<p>Fecha: " + fecha + "</p>"
                         stringDatos += "<p>Hora: " + hora.substring(0, 5) + "</p></article>"
 
@@ -44,6 +44,6 @@ function verAgenda(){
     var agenda = new Agenda()
     agenda.cargarDatos()
     const button = document.querySelector("button")
-    button.hidden = true
+    button.disabled = true
 
 }

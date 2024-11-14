@@ -109,7 +109,7 @@ class Pais{
                             
                             stringDatos += "</article>"; 
 
-                        $("#prediccion").append(stringDatos);
+                        $("section").append(stringDatos);
                         count++
                     })
                             
@@ -118,10 +118,6 @@ class Pais{
                 $("h3").html("¡Tenemos problemas! No puedo obtener XML de <a href='http://openweathermap.org'>OpenWeatherMap</a>");
                 }
         });
-    }
-    verPrediccion(){
-        $("section").after("<section id='prediccion'></section>")
-        this.cargarDatos()
     }
 }
 var pais = new Pais("Gran Bretaña", "Londres", 67736800)
@@ -134,5 +130,5 @@ document.write(pais.getInfo())
 pais.writeCoords() 
 document.write("</article>")
 
-pais.verPrediccion()
+pais.cargarDatos()
 

@@ -16,6 +16,7 @@ class Fondo{
                     if (data.items.length > 0) {
                         var imgUrl = data.items[0].media.m;
                         $("body").css("background-image", "url(" + imgUrl + ")");
+                        $("body").css("background-size", "cover");
                     } else {
                         console.log("No se encontraron imágenes");
                     }

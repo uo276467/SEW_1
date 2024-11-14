@@ -1,9 +1,11 @@
+/*Especificidad 001*/
 section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
 
+/*Especificidad 001*/
 h3{
     grid-column: 2 / span 2;
     display: flex;
@@ -11,6 +13,7 @@ h3{
     justify-content: center;
 }
 
+/*Especificidad 001*/
 div{
     grid-row: 2;
     background-color: #0007;
@@ -20,6 +23,7 @@ div{
     margin: 1em;
 }
 
+/*Especificidad 001*/
 button{
     grid-row: 3;
     display: flex;
@@ -27,15 +31,18 @@ button{
     justify-self: center;
 }
 
+/*Especificidad 010*/
 .startButton{
     grid-column: 2/3;
 }
 
+/*Especificidad 010*/
 .stopButton{
     grid-column: 3/4;
 }
 
-p{
+/*Especificidad 002*/
+section p{
     grid-row: 4;
     grid-column: 2 / span 2;
     display: flex;
@@ -43,24 +50,31 @@ p{
     justify-content: center;
 }
 
+/*Especificidad 031*/
 main.load .light:nth-child(2) {
     animation-name: lightUp;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 0s;
 }
+
+/*Especificidad 031*/
 main.load .light:nth-child(3) {
     animation-name: lightUp;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
 }
+
+/*Especificidad 031*/
 main.load .light:nth-child(4) {
     animation-name: lightUp;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 1s;
 }
+
+/*Especificidad 031*/
 main.load .light:nth-child(5) {
     animation-name: lightUp;
     animation-duration: 0.5s;
@@ -74,6 +88,7 @@ main.load .light:nth-child(5) {
     }
 }
 
+/*Especificidad 021*/
 main.unload .light {
     animation-name: out;
     animation-duration: 0.1s;

@@ -56,16 +56,17 @@ class Semaforo{
     stopReaction(semaforo){
         semaforo.clic_moment = new Date()
 
-        var dif = semaforo.clic_moment.getTime() - semaforo.unload_moment.getTime()
+        var dif = (semaforo.clic_moment.getTime() - semaforo.unload_moment.getTime()) / 1000
 
-        dif = dif.toFixed(3) //???
+        dif = dif.toPrecision(3)
 
         const result = document.createElement("p")
-        result.textContent = dif + " milisegundos"
+        result.textContent = dif + " segundos"
 
         const section = document.querySelector("section")
         section.appendChild(result)
         
+        const main = document.querySelector("main")
         main.classList.remove("load")
         main.classList.remove("unload")  
         
