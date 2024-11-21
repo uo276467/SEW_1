@@ -132,3 +132,7 @@ a[class="activo"]{
     font-size: 1.3em;
     color: #032533;
 }
+
+section p input:nth-child(3){
+    background-color: brown;
+}
