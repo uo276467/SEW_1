@@ -109,7 +109,6 @@ function verTop10($top10) {
             <a href="api.html">Api</a>
         </nav>
 
-        <aside>
         <?php
             if (count ($_POST) > 0){
                 $record = new Record();
@@ -124,11 +123,12 @@ function verTop10($top10) {
                 $top10 = $record->getTop10Records($nivel);
                 $listaTop10 = verTop10($top10);
             
+                echo '<aside>'
                 echo '<h4>Top 10 para el nivel ' . $nivel . '</h4>';
                 echo $listaTop10;
+                echo '</aside>';
             }
             ?>
-        </aside>
     
     </main>
     <script src="js/semaforo.js"></script>

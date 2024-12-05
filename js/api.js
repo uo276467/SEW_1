@@ -1,3 +1,7 @@
+/*
+Esta aplicación lee archivos de texto plano y los transforma en notas.
+El archivo ubicado util/notas.txt sirve de ejemplo para probar esta aplicación.
+*/
 function seleccionarArchivo(){
     const inputFile = document.querySelector("input")
     var archivo = inputFile.files[0];
@@ -40,27 +44,29 @@ function añadirNotas(archivo) {
 
 function agregarDragAndDrop(aside) {
     aside.addEventListener("dragstart", empezarDrag)
-
-    aside.addEventListener("dragend", terminarDrag)
 }
 
 function empezarDrag(e){
+    e.dataTransfer.setData("text/plain", "");
+
     const rect = e.target.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
-    e.target.classList.add("dragging")
-}
-function terminarDrag(e){
-    e.target.classList.remove("dragging")
+    e.dataTransfer.setData("offsetX", e.clientX - rect.left);
+    e.dataTransfer.setData("offsetY", e.clientY - rect.top);
+
+    e.dataTransfer.effectAllowed = "move";
 }
 
 function soltarNota(e){
     e.preventDefault();
-    const aside = document.querySelector(".dragging");
+    const offsetX = parseFloat(e.dataTransfer.getData("offsetX"));
+    const offsetY = parseFloat(e.dataTransfer.getData("offsetY"));
+    const aside = document.querySelector('[draggable="true"]:hover');
+
     if (aside) {
-        const rect = article.getBoundingClientRect()
-        aside.style.left = e.clientX - rect.left - offsetX + "px"
-        aside.style.top = e.clientY - rect.top - offsetY + "px"
+        const rect = article.getBoundingClientRect();
+        aside.style.position = "absolute";
+        aside.style.left = e.clientX - rect.left - offsetX + "px";
+        aside.style.top = e.clientY - rect.top - offsetY + "px";
     }
 }
 
@@ -113,9 +119,6 @@ function alternarFullscreen() {
         button.textContent = "Pantalla Completa";
     }
 }
-
-let offsetX
-let offsetY
 
 const section = document.querySelector("section")
 const article = document.createElement("article")
