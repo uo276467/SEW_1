@@ -3,16 +3,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>F1Desktop: juego memoria</title>
+    <title>F1Desktop: notas</title>
 
     <meta name="author" content="Daniel Suárez de la Roza"/>
-    <meta name="description" content="Juego de memoria con cartas"/>
-    <meta name="keywords" content="F1, Fórmula 1, juego, cartas, memoria"/>
+    <meta name="description" content="Próximos juegos de Fórmula 1"/>
+    <meta name="keywords" content="F1, Fórmula 1, juego, premio"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/memoria.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/api.css" />
+
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+    </script>
 
 </head>
 
@@ -33,7 +39,7 @@
         </header>
 
         <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos </a>
-        >> Memoria</p>
+        >> Api</p>
 
         <nav>
             <a href="memoria.html">Memoria</a>
@@ -42,9 +48,11 @@
         </nav>
 
         <section>
-            <h3>Juego de memoria</h3>
+            <h3>Api</h3>
+            <p><input type="file" onchange="seleccionarArchivo()"></p>
+            <button onclick="alternarFullscreen()">Pantalla Completa</button>
         </section>
     </main>
-    <script src="js/memoria.js"></script>
+    <script src="js/api.js"></script>
 </body>
 </html>

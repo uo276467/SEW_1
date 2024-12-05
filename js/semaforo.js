@@ -8,7 +8,10 @@ class Semaforo{
         this.createStructure()
     }
     createStructure() {
-        const section = document.querySelector("section")
+        const main = document.querySelector("main")
+
+        const section = document.createElement("section")
+        main.append(section)
     
         const title = document.createElement("h3")
         title.textContent = "Semáforo"
@@ -56,12 +59,12 @@ class Semaforo{
     stopReaction(semaforo){
         semaforo.clic_moment = new Date()
 
-        var dif = (semaforo.clic_moment.getTime() - semaforo.unload_moment.getTime()) / 1000
+        var tiempoReaccion = (semaforo.clic_moment.getTime() - semaforo.unload_moment.getTime()) / 1000
 
-        dif = dif.toPrecision(3)
+        tiempoReaccion = tiempoReaccion.toPrecision(3)
 
         const result = document.createElement("p")
-        result.textContent = dif + " segundos"
+        result.textContent = tiempoReaccion + " segundos"
 
         const section = document.querySelector("section")
         section.appendChild(result)
@@ -73,6 +76,59 @@ class Semaforo{
         const startButton = document.querySelector(".startButton")
         startButton.disabled = false
         this.disabled = true
+
+        semaforo.createRecordForm(tiempoReaccion)
+    }
+    createRecordForm(tiempoReaccion) {
+        const main = $("main");
+
+        const article = document.createElement("article")
+
+        const form = $("<form>")
+            .attr("action", "#")
+            .attr("method", "post");
+
+        const nameField = $("<input>")
+            .attr("type", "text")
+            .attr("name", "nombre")
+            .attr("placeholder", "Nombre")
+            .prop("required", true);
+
+        const surnameField = $("<input>")
+            .attr("type", "text")
+            .attr("name", "apellidos")
+            .attr("placeholder", "Apellidos")
+            .prop("required", true);
+
+        const levelField = $("<input>")
+            .attr("type", "text")
+            .attr("name", "nivel")
+            .val(this.difficulty)
+            .prop("readonly", true);
+            console.log(this.difficulty)
+
+        const timeField = $("<input>")
+            .attr("type", "text")
+            .attr("name", "tiempoReaccion")
+            .val(tiempoReaccion + " segundos")
+            .prop("readonly", true);
+
+        const submitButton = $("<button>")
+            .attr("type", "submit")
+            .text("Enviar");
+
+        // Añadir los campos al formulario
+        form.append(
+            $("<label>").text("Nombre").append(nameField),
+            $("<label>").text("Apellidos").append(surnameField),
+            $("<label>").text("Nivel").append(levelField),
+            $("<label>").text("Tiempo de reacción").append(timeField),
+            submitButton
+        );
+
+        // Agregar el formulario al final del article
+        article.append(form);
+        main.append(article)
     }
 }
 

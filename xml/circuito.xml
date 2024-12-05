@@ -18,22 +18,132 @@
         <vídeo enlace="multimedia/videos/silverstone1.mp3"/>
         <vídeo enlace="multimedia/videos/silverstone2.mp3"/>
     </galeríaVídeos>
-    <coordenadas longitud="-1.014818" latitud="52.073273" altitud="140m"/>
+    <coordenadas longitud="-1.022263" latitud="52.069219" altitud="0.0"/>
     <puntos>
         <tramo>
-            <distancia valor="2,3" unidades="km"/>
-            <coordenadas longitud="-2.014818" latitud="53.073273" altitud="142m"/>
+            <distancia valor="0.3" unidades="km"/>
+            <coordenadas longitud="-1.022263" latitud="52.069219" altitud="146"/>
             <sector>1</sector>
         </tramo>
         <tramo>
-            <distancia valor="1,6" unidades="km"/>
-            <coordenadas longitud="-3.014818" latitud="54.073273" altitud="145m"/>
+            <distancia valor="0.2" unidades="km"/>
+            <coordenadas longitud="-1.019494" latitud="52.071283" altitud="150"/>
             <sector>2</sector>
         </tramo>
         <tramo>
-            <distancia valor="2" unidades="km"/>
-            <coordenadas longitud="-4.014818" latitud="55.073273" altitud="142m"/>
+            <distancia valor="0.26" unidades="km"/>
+            <coordenadas longitud="-1.016555" latitud="52.071243" altitud="152"/>
             <sector>3</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.14" unidades="km"/>
+            <coordenadas longitud="-1.013368" latitud="52.072536" altitud="154"/>
+            <sector>4</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.14" unidades="km"/>
+            <coordenadas longitud="-1.012382" latitud="52.071408" altitud="156"/>
+            <sector>5</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.67" unidades="km"/>
+            <coordenadas longitud="-1.011479" latitud="52.073106" altitud="155"/>
+            <sector>6</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.09" unidades="km"/>
+            <coordenadas longitud="-1.018780" latitud="52.077129" altitud="152"/>
+            <sector>7</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.11" unidades="km"/>
+            <coordenadas longitud="-1.020003" latitud="52.076918" altitud="151"/>
+            <sector>8</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.05" unidades="km"/>
+            <coordenadas longitud="-1.020368" latitud="52.075929" altitud="153"/>
+            <sector>9</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.06" unidades="km"/>
+            <coordenadas longitud="-1.021141" latitud="52.075836" altitud="152"/>
+            <sector>10</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.25" unidades="km"/>
+            <coordenadas longitud="-1.021741" latitud="52.076272" altitud="153"/>
+            <sector>11</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.1" unidades="km"/>
+            <coordenadas longitud="-1.019960" latitud="52.078184" altitud="151"/>
+            <sector>12</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.48" unidades="km"/>
+            <coordenadas longitud="-1.018587" latitud="52.078579" altitud="151"/>
+            <sector>13</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.52" unidades="km"/>
+            <coordenadas longitud="-1.011656" latitud="52.078843" altitud="154"/>
+            <sector>14</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.1" unidades="km"/>
+            <coordenadas longitud="-1.010139" latitud="52.074238" altitud="154"/>
+            <sector>15</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.16" unidades="km"/>
+            <coordenadas longitud="-1.009499" latitud="52.073410" altitud="154"/>
+            <sector>16</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.13" unidades="km"/>
+            <coordenadas longitud="-1.010046" latitud="52.072049" altitud="155"/>
+            <sector>17</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.16" unidades="km"/>
+            <coordenadas longitud="-1.009275" latitud="52.071003" altitud="154"/>
+            <sector>18</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.82" unidades="km"/>
+            <coordenadas longitud="-1.010920" latitud="52.069994" altitud="151"/>
+            <sector>19</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.11" unidades="km"/>
+            <coordenadas longitud="-1.016964" latitud="52.063665" altitud="151"/>
+            <sector>20</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.42" unidades="km"/>
+            <coordenadas longitud="-1.018622" latitud="52.063735" altitud="151"/>
+            <sector>21</sector>
+        </tramo>    
+        <tramo>
+            <distancia valor="0.07" unidades="km"/>
+            <coordenadas longitud="-1.022142" latitud="52.066566" altitud="146"/>
+            <sector>22</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.13" unidades="km"/>
+            <coordenadas longitud="-1.023011" latitud="52.066236" altitud="147"/>
+            <sector>23</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0.27" unidades="km"/>
+            <coordenadas longitud="-1.024293" latitud="52.067472" altitud="145"/>
+            <sector>24</sector>
+        </tramo>
+        <tramo>
+            <distancia valor="0" unidades="km"/>
+            <coordenadas longitud="-1.022263" latitud="52.069219" altitud="146"/>
+            <sector>25</sector>
         </tramo>
     </puntos>
 </circuito>

@@ -1,0 +1,31 @@
+aside {
+    background-color: #fffacd;
+    border: 0.05em solid #f0e68c;
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.2);
+    border-radius: 0.25em;
+    padding: 0.6em;
+    margin: 0.6em;
+    font-family: Arial, sans-serif;
+    width: 12em;
+    cursor: grab;
+    position: absolute;
+}
+h4 {
+    margin: 0 0 0.25em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+article {
+    position: relative;
+    height: 70vh;
+    border: 2px dashed #ddd;
+    background-color: #f7f7f7;
+}
+button{
+    margin-top: 0.5em;
+}

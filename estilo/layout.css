@@ -6,3 +6,15 @@ header{
     align-items: baseline;
     justify-content: space-between;
 }
+
+/*Especificidad 001*/
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Especificidad 002*/
+form button{
+    align-self: flex-start;
+}
