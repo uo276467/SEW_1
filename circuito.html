@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>F1Desktop: circuito</title>
+    <link rel="icon" href="multimedia/imagenes/favicon.ico">
 
     <meta name="author" content="Daniel Suárez de la Roza"/>
     <meta name="description" content="Información sobre circuitos de Fórmula 1"/>
@@ -12,6 +13,14 @@
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+
+    <script src="js/circuito.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs"></script>
 </head>
 
 <body>
@@ -34,9 +43,8 @@
 
         <section>
             <h2>Circuito</h2>
-            <p>En desarrollo</p>
+            <p><input type="file" onchange="seleccionarArchivo()"; multiple></p>
         </section>
-        
     </main>
 </body>
 </html>

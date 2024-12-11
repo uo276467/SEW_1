@@ -74,6 +74,7 @@ class Carrusel {
 <head>
     <meta charset="UTF-8" />
     <title>F1Desktop: viajes</title>
+    <link rel="icon" href="multimedia/imagenes/favicon.ico">
 
     <meta name="author" content="Daniel Suárez de la Roza"/>
     <meta name="description" content="Mapas y viajes"/>
@@ -83,14 +84,6 @@ class Carrusel {
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
 
-    <!-- <script src="js/viajes.js"></script>
-    <script src="https://maps.googleapis.com/maps-api-v3/api/js/59/1/intl/es_ALL/common.js"></script>
-    <script src="https://maps.googleapis.com/maps-api-v3/api/js/59/1/intl/es_ALL/util.js"></script>
-    <script src="https://maps.googleapis.com/maps-api-v3/api/js/59/1/intl/es_ALL/map.js"></script>
-    <script src="https://maps.googleapis.com/maps-api-v3/api/js/59/1/intl/es_ALL/infowindow.js"></script>
-    <script src="https://maps.googleapis.com/maps-api-v3/api/js/59/1/intl/es_ALL/onion.js"></script>
-    <script src="https://maps.googleapis.com/maps-api-v3/api/js/59/1/intl/es_ALL/controls.js"></script>
-    <script src="https://maps.googleapis.com/maps-api-v3/api/js/59/1/intl/es_ALL/marker.js"></script> -->
     <script
         src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -119,12 +112,9 @@ class Carrusel {
 
         <section>
             <h2>Viajes</h2>
-            <div>
-                <h3>Mapa estático</h3>
-            </div>
-            <div>
-                <h3>Mapa dinámico</h3>
-            </div>
+            <h3>Mapa estático</h3>
+            <h3>Mapa dinámico</h3>
+            <button>Mostrar mapa</button>
             <?php
             $carrusel = new Carrusel("Londres", "Reino Unido");
             $carrusel->obtenerImagenes();
@@ -134,11 +124,8 @@ class Carrusel {
         </section>
         
     </main>
-    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs&callback=initMap"></script>
-
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs&amp;callback=initMap"></script> -->
     <script src="js/viajes.js"></script>
-
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs&callback=initMap"></script> -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs"></script>
 </body>
 </html>

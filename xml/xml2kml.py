@@ -5,65 +5,29 @@ class Kml(object):
     Genera archivo KML con puntos y líneas
     """
     def __init__(self):
-        """
-        Crea el elemento raíz y el espacio de nombres
-        """
         self.raiz = ET.Element('kml', xmlns="http://www.opengis.net/kml/2.2")
         self.doc = ET.SubElement(self.raiz,'Document')
 
     def addPlacemark(self,nombre,descripcion,long,lat,alt, modoAltitud):
-        """
-        Añade un elemento <Placemark> con puntos <Point>
-        """
+        # Añadir elemento Placemark
         pm = ET.SubElement(self.doc,'Placemark')
         ET.SubElement(pm,'name').text = '\n' + nombre + '\n'
         ET.SubElement(pm,'description').text = '\n' + descripcion + '\n'
         punto = ET.SubElement(pm,'Point')
         ET.SubElement(punto,'coordinates').text = '\n{},{},{}\n'.format(long,lat,alt)
         ET.SubElement(punto,'altitudeMode').text = '\n' + modoAltitud + '\n'
-        """
-        Agregar el elemento <LineString>
-        """
-        # Agregar el elemento LineString
+
+        # Agregar elemento LineString
         line_string = ET.SubElement(pm, 'LineString')
         ET.SubElement(line_string, 'extrude').text = '1'
         ET.SubElement(line_string, 'tessellate').text = '1'
         ET.SubElement(line_string, 'coordinates').text = f'\n{long},{lat},{alt}'
 
     def escribir(self,nombreArchivoKML):
-        """
-        Escribe el archivo KML con declaración y codificación
-        """
         arbol = ET.ElementTree(self.raiz)
         arbol.write(nombreArchivoKML, encoding='utf-8', xml_declaration=True)
 
-    def ver(self):
-        """
-        Muestra el archivo KML. Se utiliza para depurar
-        """
-        print("\nElemento raiz = ", self.raiz.tag)
-
-        if self.raiz.text != None:
-            print("Contenido = "    , self.raiz.text.strip('\n')) #strip() elimina los '\n' del string
-        else:
-            print("Contenido = "    , self.raiz.text)
-        
-        print("Atributos = "    , self.raiz.attrib)
-
-        # Recorrido de los elementos del árbol
-        for hijo in self.raiz.findall('.//'): # Expresión XPath
-            print("\nElemento = " , hijo.tag)
-            if hijo.text != None:
-                print("Contenido = ", hijo.text.strip('\n')) #strip() elimina los '\n' del string
-            else:
-                print("Contenido = ", hijo.text)    
-            print("Atributos = ", hijo.attrib)
-
-
 def procesar_xml_a_kml(xml_file, kml_file):
-    """
-    Procesa el archivo XML y convierte los puntos del circuito a KML
-    """
     # Parsear el archivo XML
     tree = ET.parse(xml_file)
     root = tree.getroot()
@@ -98,7 +62,6 @@ def procesar_xml_a_kml(xml_file, kml_file):
 
     # Guardar el archivo KML
     kml.escribir(kml_file)
-    #kml.ver()
 
 def main():
     # Nombre del archivo XML y del archivo KML de salida    

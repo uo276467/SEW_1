@@ -13,14 +13,16 @@ h3{
     justify-content: center;
 }
 
-/*Especificidad 001*/
-div{
+/*Especificidad 002*/
+section div{
     grid-row: 2;
     background-color: #0007;
     border: 0.4em solid #000000;
     border-radius: 50%;
     aspect-ratio: 1/1;
     margin: 1em;
+    width: auto;
+    height: auto;
 }
 
 /*Especificidad 001*/

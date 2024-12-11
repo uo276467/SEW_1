@@ -65,7 +65,8 @@ function verTop10($top10) {
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>F1Desktop: juego semáforo</title>
+    <title>F1Desktop: semáforo</title>
+    <link rel="icon" href="multimedia/imagenes/favicon.ico">
 
     <meta name="author" content="Daniel Suárez de la Roza"/>
     <meta name="description" content="Juego de reacción con semáforo"/>
@@ -107,6 +108,7 @@ function verTop10($top10) {
             <a href="memoria.html">Memoria</a>
             <a href="semaforo.php">Semáforo</a>
             <a href="api.html">Api</a>
+            <a href="gestion.php">Gestión</a>
         </nav>
 
         <?php
@@ -123,7 +125,7 @@ function verTop10($top10) {
                 $top10 = $record->getTop10Records($nivel);
                 $listaTop10 = verTop10($top10);
             
-                echo '<aside>'
+                echo '<aside>';
                 echo '<h4>Top 10 para el nivel ' . $nivel . '</h4>';
                 echo $listaTop10;
                 echo '</aside>';

@@ -1,0 +1,11 @@
+carreras,1,"Gran Premio de Espa?a",2024-06-02,1
+carreras,2,"Gran Premio de M?naco",2024-05-26,2
+circuitos,1,"Circuito de Barcelona",Espa?a,4.655
+circuitos,2,"Circuito de M?naco",M?naco,3.337
+equipos,1,"Red Bull Racing","Milton Keynes"
+equipos,2,"Mercedes AMG F1",Brackley
+equipos,3,Ferrari,Maranello
+pilotos,1,"Max Verstappen","Pa?ses Bajos",26,1
+pilotos,2,"Lewis Hamilton","Reino Unido",38,2
+resultados,1,1,1,1
+resultados,2,1,2,2
