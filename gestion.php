@@ -18,9 +18,18 @@ class DataManager {
             die("Error de conexión: " . $this->conn->connect_error);
         }
 
+        $this->dropDatabase();
         $this->createDatabase();
         $this->createTables();
 
+    }
+    private function dropDatabase(){
+        $query = "DROP DATABASE IF EXISTS $this->dbname";
+        if ($this->conn->query($query) === TRUE) {
+            echo "<p>Base de datos '$this->dbname' eliminada con éxito.</p>";
+        } else {
+            die("Error al eliminar la base de datos: " . $this->conn->error);
+        }
     }
     private function createDatabase() {
         $query = "CREATE DATABASE IF NOT EXISTS $this->dbname COLLATE utf8_spanish_ci";
@@ -99,23 +108,23 @@ class DataManager {
             while ($row = fgetcsv($file, 1000, ",")) {
                 $tipo = strtolower($row[0]);
                 switch ($tipo) {
-                    case 'equipo':
+                    case 'equipos':
                         $query = "INSERT INTO equipos (nombre, sede) 
                                   VALUES ('$row[1]', '$row[2]')";
                         break;
-                    case 'piloto':
+                    case 'pilotos':
                         $query = "INSERT INTO pilotos (nombre, nacionalidad, edad, idEquipo) 
                                   VALUES ('$row[1]', '$row[2]', '$row[3]', '$row[4]')";
                         break;
-                    case 'circuito':
+                    case 'circuitos':
                         $query = "INSERT INTO circuitos (nombre, pais, longitud) 
                                   VALUES ('$row[1]', '$row[2]', '$row[3]')";
                         break;
-                    case 'carrera':
+                    case 'carreras':
                         $query = "INSERT INTO carreras (nombre, fecha, idCircuito) 
                                   VALUES ('$row[1]', '$row[2]', '$row[3]')";
                         break;
-                    case 'resultado':
+                    case 'resultados':
                         $query = "INSERT INTO resultados (idCarrera, idPiloto, posicion) 
                                   VALUES ('$row[1]', '$row[2]', '$row[3]')";
                         break;
@@ -235,10 +244,9 @@ class DataManager {
 
 <?php
 if (count ($_POST) > 0){
-    if(isset($_POST["csvFile"])){
-        $fileTmpPath = $_POST["importCSV"];
+    if(isset($_POST["importCSV"])){
         try{
-            $manager->importCSV(filePath: $fileTmpPath);
+            $manager->importCSV(filePath: $_POST["importCSV"]);
             echo "<p style='color:green;'>Los datos se han importado correctamente desde el archivo CSV.</p>";
         } catch (Exception $e) {
             echo "<p style='color:red;'>Error al importar los datos: " . $e->getMessage() . "</p>";

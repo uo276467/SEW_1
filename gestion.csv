@@ -1,12 +1,11 @@
-equipo,Red Bull Racing,Milton Keynes,UK
-equipo,Mercedes AMG F1,Brackley,UK
-equipo,Ferrari,Maranello,Italia
-piloto,Max Verstappen,Países Bajos,26,1
-piloto,Lewis Hamilton,Reino Unido,38,2
-circuito,Circuito de Barcelona,España,4.655
-circuito,Circuito de Mónaco,Mónaco,3.337
-carrera,Gran Premio de España,2024-06-02,1
-carrera,Gran Premio de Mónaco,2024-05-26,2
-resultado,1,1,1
-resultado,1,2,2
-resultado,1,3,3
+equipos,Red Bull Racing,Milton Keynes
+equipos,Mercedes AMG F1,Brackley
+equipos,Ferrari,Maranello
+pilotos,Max Verstappen,PaÃ­ses Bajos,26,1
+pilotos,Lewis Hamilton,Reino Unido,38,2
+circuitos,Circuito de Barcelona,EspaÃ±a,4.655
+circuitos,Circuito de MÃ³naco,MÃ³naco,3.337
+carreras,Gran Premio de EspaÃ±a,2024-06-02,1
+carreras,Gran Premio de MÃ³naco,2024-05-26,2
+resultados,1,1,1
+resultados,1,2,2

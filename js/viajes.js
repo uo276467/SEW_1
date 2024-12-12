@@ -44,10 +44,13 @@ class Viajes {
         this.imagenMapa = url + centro + zoom + tamaño + marcador + sensor + apiKey
         var stringHtml = "<img src='"+this.imagenMapa+"' alt='mapa estático google' />"
 
-        const div = document.createElement("div")
+        //const div = document.createElement("div")
         const h3 = document.querySelector("h3:first-of-type")
-        h3.after(div)
-        $("div:first-of-type").append(stringHtml)
+        //h3.after(div)
+        h3.append(stringHtml)
+        //$("div:first-of-type").append(stringHtml)
+
+
     }
     getMapaDinamicoGoogle(){
       const div = document.createElement("div")

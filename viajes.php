@@ -114,7 +114,7 @@ class Carrusel {
             <h2>Viajes</h2>
             <h3>Mapa estático</h3>
             <h3>Mapa dinámico</h3>
-            <button>Mostrar mapa</button>
+            <!-- <button>Mostrar mapa</button> -->
             <?php
             $carrusel = new Carrusel("Londres", "Reino Unido");
             $carrusel->obtenerImagenes();
@@ -125,7 +125,7 @@ class Carrusel {
         
     </main>
     <script src="js/viajes.js"></script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs&callback=initMap"></script> -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs&callback=initMap"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs"></script> -->
 </body>
 </html>
