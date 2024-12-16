@@ -103,7 +103,7 @@ class Carrusel {
                 <a href="piloto.html">Piloto</a>
                 <a href="noticias.html">Noticias</a>
                 <a href="calendario.html">Calendario</a>
-                <a href="meteorología.html">Meteorología</a>
+                <a href="meteorologia.html">Meteorología</a>
                 <a href="circuito.html">Circuito</a>
                 <a href="viajes.php" class="activo">Viajes</a>
                 <a href="juegos.html">Juegos</a>

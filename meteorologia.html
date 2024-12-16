@@ -3,19 +3,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>F1Desktop: noticias</title>
+    <title>F1Desktop: meteorología</title>
     <link rel="icon" href="multimedia/imagenes/favicon.ico">
 
     <meta name="author" content="Daniel Suárez de la Roza"/>
-    <meta name="description" content="Últimas noticias sobre la Fórmula 1"/>
-    <meta name="keywords" content="F1, Fórmula 1, noticia, última hora"/>
+    <meta name="description" content="Meteorología esperada en los próximos días"/>
+    <meta name="keywords" content="F1, Fórmula 1, meteorología, tiempo, soleado, despejado, nubes, lluvia, niebla, temperatura"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="stylesheet" type="text/css" href="estilo/article_elements.css" />
 
-    <script src="js/noticias.js"></script>
     <script
         src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -31,31 +30,21 @@
             <nav>
                 <a href="index.html">Inicio</a>
                 <a href="piloto.html">Piloto</a>
-                <a href="noticias.html" class="activo">Noticias</a>
+                <a href="noticias.html">Noticias</a>
                 <a href="calendario.html">Calendario</a>
-                <a href="meteorologia.html">Meteorología</a>
+                <a href="meteorologia.html" class="activo">Meteorología</a>
                 <a href="circuito.html">Circuito</a>
                 <a href="viajes.php">Viajes</a>
                 <a href="juegos.html">Juegos</a>
             </nav>
         </header>
 
-        <p>Estás en: <a href="index.html">Inicio</a> >> Noticias</p>
+        <p>Estás en: <a href="index.html">Inicio</a> >> Meteorología</p>
 
         <section>
-            <h2>Noticias</h2>
-            <label for="importar">Importar noticias:</label>
-            <p><input type="file" id="importar" onchange="seleccionarArchivo()"></p>
+            <h2>Meteorología</h2>
             
-            <p>Redactar una noticia:</p>
-            <label for="titular">Titular:</label>
-            <p><input type="text" id="titular" required minlength="1" placeholder="Titular"></p>
-            <label for="contenido">Contenido:</label>
-            <p><input type="text" id="contenido" required minlength="1" placeholder="Contenido"/></p>
-            <label for="autor">Autor:</label>
-            <p><input type="text" id="autor" required minlength="1" placeholder="Autor"/></p>
-
-            <button type="button" onclick="añadirNoticia()">Añadir noticia</button>
+            <script src="js/pais.js"></script>
         </section>
         
     </main>
