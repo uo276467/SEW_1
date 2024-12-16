@@ -44,11 +44,17 @@
 
         <section>
             <h2>Noticias</h2>
-            <p><input type="file" onchange="seleccionarArchivo()"></p>
-            <p>Redacta una noticia</p>
-            <p><input type="text" required minlength="1" placeholder="Titular"/></p>
-            <p><input type="text" required minlength="1" placeholder="Contenido"/></p>
-            <p><input type="text" required minlength="1" placeholder="Autor"/></p>
+            <label for="importar">Importar noticias:</label>
+            <p><input type="file" id="importar" onchange="seleccionarArchivo()"></p>
+            
+            <p>Redactar una noticia:</p>
+            <label for="titular">Titular:</label>
+            <p><input type="text" id="titular" required minlength="1" placeholder="Titular"></p>
+            <label for="contenido">Contenido:</label>
+            <p><input type="text" id="contenido" required minlength="1" placeholder="Contenido"/></p>
+            <label for="autor">Autor:</label>
+            <p><input type="text" id="autor" required minlength="1" placeholder="Autor"/></p>
+
             <button type="button" onclick="añadirNoticia()">Añadir noticia</button>
         </section>
         
