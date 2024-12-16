@@ -17,11 +17,13 @@ th, td{
 /*Especificidad 011*/
 tr:nth-child(odd) {
     background-color: #93cbf6;
+    color: inherit;
 }
 
 /*Especificidad 011*/
 tr:nth-child(even) {
     background-color: #a0e8fa;
+    color: inherit;
 }
 
 /*Especificidad 001*/

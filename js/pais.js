@@ -87,23 +87,23 @@ class Pais{
                         
                         var stringDatos =  "<article><h3>Predicción día " + count +"</h3>"
                             stringDatos += "<table>"
-                            stringDatos += "<tr><th scope='col' id='min'>Temperatura mínima</th>"
-                            stringDatos += "<th scope='col' id='max'>Temperatura máxima</th>" 
-                            stringDatos += "<th socpe='col' id='humedad'>Humedad</th>"
-                            stringDatos += "<th scope='col' id='precipitacion'>Precipitación</th></tr>"
+                            stringDatos += "<tr><th scope='col' id='min" + count + "'>Temperatura mínima</th>"
+                            stringDatos += "<th scope='col' id='max" + count + "'>Temperatura máxima</th>" 
+                            stringDatos += "<th id='humedad" + count + "'>Humedad</th>"
+                            stringDatos += "<th scope='col' id='precipitacion" + count + "'>Precipitación</th></tr>"
 
-                            stringDatos += "<tr><td headers='min'>" + temperaturaMin + " grados " + temperaturaUnit + "</td>"
-                            stringDatos += "<td headers='max'>" + temperaturaMax + " grados " + temperaturaUnit + "</td>"
-                            stringDatos += "<td headers='humedad'>" + humedad + " " + humedadUnit + "</td>"
+                            stringDatos += "<tr><td headers='min" + count + "'>" + temperaturaMin + " grados " + temperaturaUnit + "</td>"
+                            stringDatos += "<td headers='max" + count + "'>" + temperaturaMax + " grados " + temperaturaUnit + "</td>"
+                            stringDatos += "<td headers='humedad" + count + "'>" + humedad + " " + humedadUnit + "</td>"
                             if (precipitacionValue === undefined) {
                                 stringDatos += "<td>No disponible</td></tr>"
                             } else {
-                                stringDatos += "<td>" + precipitacionValue + " " + precipitacionUnit + "</td></tr>"
+                                stringDatos += "<td headers='precipitacion" + count + "'>" + precipitacionValue + " " + precipitacionUnit + "</td></tr>"
                             }
                             stringDatos += "</table>"
                             
                             stringDatos += "<figure>"
-                            stringDatos += "<img src='" + iconoUrl + iconoCode + iconoFormat + "' alt='" + iconoNombre + "' width='10%' height='auto'>"
+                            stringDatos += "<img src='" + iconoUrl + iconoCode + iconoFormat + "' alt='" + iconoNombre + "'>"
                             stringDatos += "<figcaption>" + iconoNombre + "</figcaption>"
                             stringDatos += "</figure>"
                             
@@ -123,12 +123,10 @@ class Pais{
 var pais = new Pais("Gran Bretaña", "Londres", 67736800)
 pais.setValores("Silverstone", "Democracia parlamentaria", 
     52.069219, -1.022263, "Cristianismo")
-document.write("<article>")
 document.write("<p>País: " + pais.getNombrePais() + "</p>")    
 document.write("<p>Capital: " + pais.getNombreCapital() + "</p>")
 document.write(pais.getInfo())
 pais.writeCoords() 
-document.write("</article>")
 
 pais.cargarDatos()
 

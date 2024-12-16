@@ -9,7 +9,7 @@ section {
 
 
 /*Especificidad 002*/
-section h3, h2 {
+section h3 {
     flex: 100%;
     text-align: center;
 }
@@ -43,7 +43,8 @@ article img {
     height: 100%;
     border-radius: 0.5em;
     position: absolute;
-    background: #1C7CCC;
+    background-color: #1C7CCC;
+    color: inherit;
     backface-visibility: hidden;
 }
 

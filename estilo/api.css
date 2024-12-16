@@ -1,5 +1,7 @@
+/*Especificidad 001*/
 aside {
     background-color: #fffacd;
+    color: inherit;
     border: 0.05em solid #f0e68c;
     box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.2);
     border-radius: 0.25em;
@@ -10,22 +12,39 @@ aside {
     cursor: grab;
     position: absolute;
 }
+
+/*Especificidad 001*/
 h4 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+/*Especificidad 001*/
+h5 {
     margin: 0 0 0.25em 0;
     font-size: 1.2em;
+    background-color: inherit;
     color: #555;
 }
+
+/*Especificidad 001*/
 p {
     margin: 0;
     font-size: 1em;
+    background-color: inherit;
     color: #333;
 }
+
+/*Especificidad 001*/
 article {
     position: relative;
     height: 70vh;
     border: 2px dashed #ddd;
     background-color: #f7f7f7;
+    color: inherit;
 }
+
+/*Especificidad 001*/
 button{
     margin-top: 0.5em;
 }

@@ -31,39 +31,42 @@ function mostrarContenidoXML(archivo){
     const htmlContent = recorrerNodos(archivo.documentElement)
     const article = document.createElement("article")
     $(article).append("<h3>Contenido XML</h3>")
-    $(article).append(htmlContent)
+    const ul = $("<ul>")
+    ul.append(htmlContent)
+    $(article).append(ul)
     $("section").append(article)
 }
 
 function recorrerNodos(nodo) {
-    let html = ""
+    let html = "";
     if (nodo.nodeType === Node.ELEMENT_NODE) {
-        html += "<ul><li><strong>" + nodo.nodeName + "</strong>"
+        html += "<li><strong>" + nodo.nodeName + "</strong>";
 
         if (nodo.attributes && nodo.attributes.length > 0) {
-            html += "<ul>"
+            html += "<ul>"; // ✅ El <ul> está correctamente dentro del <li>
             Array.from(nodo.attributes).forEach(attr => {
-                html += "<li><strong>" + attr.name + ":</strong>" + attr.value + "</li>"
-            })
-            html += "</ul>"
+                html += "<li><strong>" + attr.name + ":</strong> " + attr.value + "</li>";
+            });
+            html += "</ul>";
         }
 
         if (nodo.childNodes && nodo.childNodes.length > 0) {
-            html += "<ul>"
+            html += "<ul>"; // ✅ Este <ul> ahora está dentro de un <li>
             Array.from(nodo.childNodes).forEach(childNode => {
                 if (childNode.nodeType === Node.TEXT_NODE && childNode.nodeValue.trim() !== "") {
-                    html += "<li>" + childNode.nodeValue.trim() + "</li>"
+                    html += "<li>" + childNode.nodeValue.trim() + "</li>";
                 } else if (childNode.nodeType === Node.ELEMENT_NODE) {
-                    html += recorrerNodos(childNode)
+                    html += recorrerNodos(childNode); // Se sigue llamando de forma recursiva
                 }
-            })
-            html += "</ul>"
+            });
+            html += "</ul>";
         }
 
-        html += "</li></ul>"
+        html += "</li>"; // Cierra el <li> actual
     }
-    return html
+    return html;
 }
+
 
 function leerArchivoKML(archivo) {
     const reader = new FileReader()

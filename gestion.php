@@ -1,4 +1,5 @@
 <?php
+ob_start();
 class DataManager {
     private $server;
     private $user;
@@ -18,12 +19,9 @@ class DataManager {
             die("Error de conexión: " . $this->conn->connect_error);
         }
 
-        $this->dropDatabase();
         $this->createDatabase();
-        $this->createTables();
-
     }
-    private function dropDatabase(){
+    public function dropDatabase(){
         $query = "DROP DATABASE IF EXISTS $this->dbname";
         if ($this->conn->query($query) === TRUE) {
             echo "<p>Base de datos '$this->dbname' eliminada con éxito.</p>";
@@ -31,72 +29,27 @@ class DataManager {
             die("Error al eliminar la base de datos: " . $this->conn->error);
         }
     }
-    private function createDatabase() {
+    public function createDatabase() {
         $query = "CREATE DATABASE IF NOT EXISTS $this->dbname COLLATE utf8_spanish_ci";
         if ($this->conn->query($query) === TRUE) {
             $this->conn->select_db($this->dbname);
+            $this->createTables();
         } else {
             die("Error al crear la base de datos: " . $this->conn->error);
         }
     }
-    private function createTables() {
-        $tables = [
-            'equipos' => "
-                CREATE TABLE IF NOT EXISTS equipos (
-                    id INT NOT NULL AUTO_INCREMENT,
-                    nombre VARCHAR(255) NOT NULL,
-                    sede VARCHAR(255) NOT NULL,
-                    PRIMARY KEY (id)
-                ) 
-            ",
-            'pilotos' => "
-                CREATE TABLE IF NOT EXISTS pilotos (
-                    id INT NOT NULL AUTO_INCREMENT,
-                    nombre VARCHAR(255) NOT NULL,
-                    nacionalidad VARCHAR(255) NOT NULL,
-                    edad INT NOT NULL,
-                    idEquipo INT NOT NULL,
-                    FOREIGN KEY (idEquipo) REFERENCES equipos(id),
-                    PRIMARY KEY (id)
-                )
-            ",
-            'circuitos' => "
-                CREATE TABLE IF NOT EXISTS circuitos (
-                    id INT NOT NULL AUTO_INCREMENT,
-                    nombre VARCHAR(255) NOT NULL,
-                    pais VARCHAR(255) NOT NULL,
-                    longitud DECIMAL(10, 3) NOT NULL,
-                    PRIMARY KEY (id)
-                )
-            ",
-            'carreras' => "
-                CREATE TABLE IF NOT EXISTS carreras (
-                    id INT NOT NULL AUTO_INCREMENT,
-                    nombre VARCHAR(50) NOT NULL,
-                    fecha DATE NOT NULL,
-                    idCircuito INT NOT NULL,
-                    FOREIGN KEY (idCircuito) REFERENCES circuitos(id),
-                    PRIMARY KEY (id)
-                )
-            ",
-            'resultados' => "
-                CREATE TABLE IF NOT EXISTS resultados (
-                    id INT NOT NULL AUTO_INCREMENT,
-                    idCarrera INT NOT NULL,
-                    idPiloto INT NOT NULL,
-                    posicion INT NOT NULL,
-                    FOREIGN KEY (idCarrera) REFERENCES carreras(id),
-                    FOREIGN KEY (idPiloto) REFERENCES pilotos(id),
-                    PRIMARY KEY (id)
-                )
-            "
-        ];
-
-        foreach ($tables as $tableName => $query) {
-            if ($this->conn->query($query) === TRUE) {
-                echo "<p>Tabla '$tableName' creada con éxito.</p>";
-            } else {
-                echo "<p>Error al crear la tabla '$tableName': " . $this->conn->error . "</p>";
+    public function createTables() {
+        $sqlFilePath = 'gestion.sql';
+        
+        $sqlContent = file_get_contents($sqlFilePath);
+        
+        $queries = array_filter(array_map('trim', explode(';', $sqlContent)));
+        
+        foreach ($queries as $query) {
+            if (!empty($query)) {
+                if ($this->conn->query($query) !== TRUE) {
+                    echo "<p>Error al ejecutar la consulta: " . $this->conn->error . "</p>";
+                }
             }
         }
     }
@@ -139,7 +92,6 @@ class DataManager {
             return "Error: " . $e->getMessage();
         }
     }
-
     public function exportCSV() {
         ob_clean();
     
@@ -148,6 +100,8 @@ class DataManager {
         header('Content-Type: text/csv; charset=UTF-8');
         header('Content-Disposition: attachment; filename="' . $filename . '"');
     
+        echo "\xEF\xBB\xBF"; //BOM utf-8
+
         $file = fopen('php://output', 'w');
     
         foreach ($tables as $table) {
@@ -177,11 +131,28 @@ class DataManager {
         fclose($file);
         exit();
     }
+    public function insertData($table, $data) {
+        try {
+            $columns = implode(", ", array_keys($data));
+            $values = implode(", ", array_map(function($value) {
+                return "'" . $this->conn->real_escape_string($value) . "'";
+            }, array_values($data)));
     
+            $query = "INSERT INTO $table ($columns) VALUES ($values)";
+    
+            if ($this->conn->query($query) === TRUE) {
+                echo "<p>Datos insertados con éxito en la tabla $table.</p>";
+            }
+        } catch (Exception $e) {
+            echo "<p>Error al insertar los datos.</p>";
+        }
+    }
+    public function __destruct() {
+        $this->conn->close();
+    }
 }
 ?>
 <!DOCTYPE HTML>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
@@ -217,6 +188,7 @@ class DataManager {
         <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos </a>
         >> Gestión</p>
 
+        <h2>Juegos</h2>
         <nav>
             <a href="memoria.html">Memoria</a>
             <a href="semaforo.php">Semáforo</a>
@@ -226,24 +198,79 @@ class DataManager {
 
         <section>
             <h3>Gestión</h3>
-                <form action=# method="post">
-                    <label for="import">Seleccionar archivo CSV:</label>
-                    <input type="file" id="import" name="importCSV" accept=".csv" required>
-                    <button type="submit">Importar CSV</button>
+            <form action=# method="post">
+                <button type="submit" name="restart">Reinciar Base de Datos</button>
+            </form>
+            <form action=# method="post">
+                <label for="import">Seleccionar archivo CSV:</label>
+                <input type="file" id="import" name="importCSV" accept=".csv" required>
+                <button type="submit">Importar CSV</button>
+            </form>
+            <form action=# method="post">
+                <button type="submit" name="exportCSV">Exportar CSV</button>
+            </form>
+
+            <article>
+                <h4>Insertar en Equipos</h4>
+                <form method="post">
+                    <label>Nombre: <input type="text" name="nombre" required></label>
+                    <label>Sede: <input type="text" name="sede" required></label>
+                    <button type="submit" name="insert_equipos">Insertar Equipo</button>
                 </form>
-                <form action=# method="post">
-                    <button type="submit" name="exportCSV">Exportar CSV</button>
+            </article>
+                
+            <article>
+                <h4>Insertar en Pilotos</h4>
+                <form method="post">
+                    <label>Nombre: <input type="text" name="nombre" required></label>
+                    <label>Nacionalidad: <input type="text" name="nacionalidad" required></label>
+                    <label>Edad: <input type="number" name="edad" required></label>
+                    <label>ID Equipo: <input type="number" name="idEquipo" required></label>
+                    <button type="submit" name="insert_pilotos">Insertar Piloto</button>
                 </form>
-                <?php
-                $manager = new DataManager();
-                ?>
+            </article>
+                
+            <article>
+                <h4>Insertar en Circuitos</h4>
+                <form method="post">
+                    <label>Nombre: <input type="text" name="nombre" required></label>
+                    <label>País: <input type="text" name="pais" required></label>
+                    <label>Longitud: <input type="number" step="0.001" name="longitud" required></label>
+                    <button type="submit" name="insert_circuitos">Insertar Circuito</button>
+                </form>
+            </article>
+
+            <article>
+                <h4>Insertar en Carreras</h4>
+                <form method="post">
+                    <label>Nombre: <input type="text" name="nombre" required></label>
+                    <label>Fecha: <input type="date" name="fecha" required></label>
+                    <label>ID Circuito: <input type="number" name="idCircuito" required></label>
+                    <button type="submit" name="insert_carreras">Insertar Carrera</button>
+                </form>
+            </article>
+                
+            <article>
+                <h4>Insertar en Resultados</h4>
+                <form method="post">
+                    <label>ID Carrera: <input type="number" name="idCarrera" required></label>
+                    <label>ID Piloto: <input type="number" name="idPiloto" required></label>
+                    <label>Posición: <input type="number" name="posicion" required></label>
+                    <button type="submit" name="insert_resultados">Insertar Resultado</button>
+                </form>
+            </article>
         </section>
     </main>
 </body>
 </html>
 
 <?php
+$manager = new DataManager();
 if (count ($_POST) > 0){
+    if (isset($_POST['restart'])) {
+        $manager->dropDatabase();
+        $manager->createDatabase();
+    }
     if(isset($_POST["importCSV"])){
         try{
             $manager->importCSV(filePath: $_POST["importCSV"]);
@@ -259,6 +286,38 @@ if (count ($_POST) > 0){
         } catch (Exception $e) {
             echo "<p style='color:red;'>Error al exportar los datos: " . $e->getMessage() . "</p>";
         }
+    }
+    if (isset($_POST['insert_equipos'])) {
+        $manager->insertData('equipos', ['nombre' => $_POST['nombre'], 'sede' => $_POST['sede']]);
+    }
+    if (isset($_POST['insert_pilotos'])) {
+        $manager->insertData('pilotos', [
+            'nombre' => $_POST['nombre'], 
+            'nacionalidad' => $_POST['nacionalidad'], 
+            'edad' => $_POST['edad'], 
+            'idEquipo' => $_POST['idEquipo']
+        ]);
+    }
+    if (isset($_POST['insert_circuitos'])) {
+        $manager->insertData('circuitos', [
+            'nombre' => $_POST['nombre'], 
+            'pais' => $_POST['pais'], 
+            'longitud' => $_POST['longitud']
+        ]);
+    }
+    if (isset($_POST['insert_carreras'])) {
+        $manager->insertData('carreras', [
+            'nombre' => $_POST['nombre'], 
+            'fecha' => $_POST['fecha'], 
+            'idCircuito' => $_POST['idCircuito']
+        ]);
+    }
+    if (isset($_POST['insert_resultados'])) {
+        $manager->insertData('resultados', [
+            'idCarrera' => $_POST['idCarrera'], 
+            'idPiloto' => $_POST['idPiloto'], 
+            'posicion' => $_POST['posicion']
+        ]);
     }    
 }
 ?>

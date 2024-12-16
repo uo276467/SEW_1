@@ -11,17 +11,27 @@ body{
 /*Especificidad 001*/
 header{
     background-color: #75e6da;
+    color: inherit;
 }
 
 /*Especificidad 001*/
 nav{
     font-size: 1.3em;
-    color: #05445e;
+    background-color: #75e6da;
+    color: inherit;
+}
+
+/*Especificidad 002*/
+h2 + nav{
+    font-size: 1.3em;
+    background-color: #d4f1f4;
+    color: inherit;
 }
 
 /*Especificidad 001*/
 h1{
-    color: #05445e;
+    background-color: #75e6da;
+    color: inherit;
 }
 
 /*Especificidad 002*/
@@ -104,11 +114,13 @@ th, td {
 /*Especificidad 011*/
 tr:nth-child(odd) {
     background-color: #93cbf6;
+    color: inherit;
 }
 
 /*Especificidad 011*/
 tr:nth-child(even) {
     background-color: #a0e8fa;
+    color: inherit;
 }
 
 /* Multimedia */
@@ -119,9 +131,9 @@ video {
     height: auto;
 }
 
-/*Especificidad 001*/
+/*Especificidad 002*/
 picture img {
-    width: 100%;
+    width: auto;
     height: auto;
 }
 
@@ -131,18 +143,20 @@ picture img {
 a[class="activo"]{
     font-weight: 600;
     font-size: 1.3em;
+    background-color: inherit;
     color: #032533;
 }
 
 /*Especificidad 013*/
 section p input:nth-child(3){
     background-color: brown;
+    color: inherit
 }
 
 /* Carrusel */
 
-/*Especificidad 002*/
-div + article{
+/*Especificidad 012*/
+button:nth-of-type(2) + article{
     width: 100%;
     max-width: 100vh;
     height: 70vh;
@@ -151,8 +165,8 @@ div + article{
     border-radius: 1em;
 }
 
-/*Especificidad 003*/
-div + article img{
+/*Especificidad 013*/
+button:nth-of-type(2) + article img{
     width: 100%;
     max-width: 100vh;
     height: 60vh;
@@ -162,8 +176,8 @@ div + article img{
     border-radius: 0.5em;
 }
 
-/*Especificidad 003*/
-div + article button {
+/*Especificidad 013*/
+button:nth-of-type(2) + article button {
     position: absolute;
     width: 2em;
     height: 2em;
@@ -173,6 +187,7 @@ div + article button {
     z-index: 10;
     cursor: pointer;
     background-color: #fff;
+    color: inherit;
     font-size: 1em;
     display: flex;
     flex-direction: column;
@@ -180,37 +195,33 @@ div + article button {
     justify-content: center;
 }
 
-/*Especificidad 013*/
-div + article button:active {
+/*Especificidad 023*/
+button:nth-of-type(2) + article button:active {
     transform: scale(1.1);
 }
 
-/*Especificidad 013*/
-div + article button:nth-of-type(2) {
+/*Especificidad 023*/
+button:nth-of-type(2) + article button:nth-of-type(2) {
     top: 50%;
     left: 2%;
 }
 
-/*Especificidad 013*/
-div + article button:nth-of-type(1) {
+/*Especificidad 023*/
+button:nth-of-type(2) + article button:nth-of-type(1) {
     top: 50%;
     right: 2%;
 }
 
-/*Especificidad 012*/
-/* div:nth-of-type(2){
-    width:100%; 
-    height:40vw; 
-} */
+/* Mapas */
 
-/*Especificidad 011*/
-div[contentEditable="false"]{
+/*Especificidad 002*/
+section > div{
     width: 100%;
     height: 40vw;
 }
 
-/*Especificidad 011*/
-/* div:first-of-type{
-    width: auto;
-    height: auto;
-} */
+/*Especificidad 002*/
+article > div{
+    width: 100%;
+    height: 40vw;
+}

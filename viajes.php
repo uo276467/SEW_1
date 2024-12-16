@@ -84,6 +84,8 @@ class Carrusel {
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
 
+    <script src="js/viajes.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs"></script>
     <script
         src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -113,8 +115,9 @@ class Carrusel {
         <section>
             <h2>Viajes</h2>
             <h3>Mapa estático</h3>
+            <button onclick="initMapaEstatico()">Mostrar mapa estático</button>
             <h3>Mapa dinámico</h3>
-            <!-- <button>Mostrar mapa</button> -->
+            <button onclick="initMapaDinamico()">Mostrar mapa dinámico</button>
             <?php
             $carrusel = new Carrusel("Londres", "Reino Unido");
             $carrusel->obtenerImagenes();
@@ -124,8 +127,5 @@ class Carrusel {
         </section>
         
     </main>
-    <script src="js/viajes.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs&callback=initMap"></script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBAQHjy-15VCba2o5ZQ6nVJXD8iVdBQYs"></script> -->
 </body>
 </html>

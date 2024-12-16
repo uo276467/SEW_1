@@ -62,6 +62,12 @@ class Semaforo{
         var tiempoReaccion = (semaforo.clic_moment.getTime() - semaforo.unload_moment.getTime()) / 1000
 
         tiempoReaccion = tiempoReaccion.toPrecision(3)
+        
+        const prevResult = $("p")
+        if(prevResult) prevResult.remove()
+
+        const prevForm = $("article")
+        if(prevForm) prevForm.remove()
 
         const result = document.createElement("p")
         result.textContent = tiempoReaccion + " segundos"
@@ -82,7 +88,10 @@ class Semaforo{
     createRecordForm(tiempoReaccion) {
         const main = $("main");
 
-        const article = document.createElement("article")
+        const article = $("<article>");
+
+        const h4 = $("<h4>Registra tu puntuación</h4>")
+        article.append(h4)
 
         const form = $("<form>")
             .attr("action", "#")
@@ -105,7 +114,6 @@ class Semaforo{
             .attr("name", "nivel")
             .val(this.difficulty)
             .prop("readonly", true);
-            console.log(this.difficulty)
 
         const timeField = $("<input>")
             .attr("type", "text")
@@ -117,7 +125,6 @@ class Semaforo{
             .attr("type", "submit")
             .text("Enviar");
 
-        // Añadir los campos al formulario
         form.append(
             $("<label>").text("Nombre").append(nameField),
             $("<label>").text("Apellidos").append(surnameField),
@@ -126,8 +133,7 @@ class Semaforo{
             submitButton
         );
 
-        // Agregar el formulario al final del article
-        article.append(form);
+        article.append(form)
         main.append(article)
     }
 }

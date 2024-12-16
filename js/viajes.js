@@ -12,8 +12,6 @@ class Viajes {
         this.precisionAltitud = posicion.coords.altitudeAccuracy;
         this.rumbo            = posicion.coords.heading;
         this.velocidad        = posicion.coords.speed;  
-
-       this.getMapaEstaticoGoogle()
     }
     verErrores(error){
         switch(error.code) {
@@ -44,11 +42,8 @@ class Viajes {
         this.imagenMapa = url + centro + zoom + tamaño + marcador + sensor + apiKey
         var stringHtml = "<img src='"+this.imagenMapa+"' alt='mapa estático google' />"
 
-        //const div = document.createElement("div")
         const h3 = document.querySelector("h3:first-of-type")
-        //h3.after(div)
-        h3.append(stringHtml)
-        //$("div:first-of-type").append(stringHtml)
+        $(h3).after(stringHtml)
 
 
     }
@@ -95,8 +90,15 @@ class Viajes {
 }
 
 const viajes = new Viajes();
-function initMap() {
+function initMapaEstatico() {
+  viajes.getMapaEstaticoGoogle()
+  const button = document.querySelector("button:first-of-type")
+  button.hidden = true
+}
+function initMapaDinamico() {
   viajes.getMapaDinamicoGoogle()
+  const button = document.querySelector("button:last-of-type")
+  button.hidden = true
 }
 
 /* CARRUSEL */

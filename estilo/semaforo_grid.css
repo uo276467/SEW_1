@@ -17,6 +17,7 @@ h3{
 section div{
     grid-row: 2;
     background-color: #0007;
+    color: inherit;
     border: 0.4em solid #000000;
     border-radius: 50%;
     aspect-ratio: 1/1;
@@ -45,7 +46,6 @@ button{
 
 /*Especificidad 002*/
 section p{
-    grid-row: 4;
     grid-column: 2 / span 2;
     display: flex;
     align-items: center;
@@ -87,6 +87,7 @@ main.load .light:nth-child(5) {
 @keyframes lightUp {
     to {
         background-color: red;
+        color: inherit;
     }
 }
 
@@ -95,10 +96,4 @@ main.unload .light {
     animation-name: out;
     animation-duration: 0.1s;
     animation-fill-mode: forwards;
-}
-
-@keyframes out {
-    to {
-        background-color: #0007;
-    }
 }

@@ -24,10 +24,9 @@ function añadirNotas(archivo) {
             var lineas = nota.split("_")
 
             const aside = document.createElement("aside")
-            aside.id = lineas[0]
             aside.draggable = true
 
-            const h4 = document.createElement("h4")
+            const h4 = document.createElement("h5")
             h4.textContent = lineas[0]
             const p = document.createElement("p")
             p.textContent = lineas[1]
@@ -120,9 +119,7 @@ function alternarFullscreen() {
     }
 }
 
-const section = document.querySelector("section")
-const article = document.createElement("article")
-section.appendChild(article)
+const article = document.querySelector("article")
 article.addEventListener("drop", soltarNota)
 article.addEventListener("dragover", (e) => {
     e.preventDefault()

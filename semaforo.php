@@ -65,7 +65,7 @@ function verTop10($top10) {
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>F1Desktop: semáforo</title>
+    <title>F1Desktop: juego semáforo</title>
     <link rel="icon" href="multimedia/imagenes/favicon.ico">
 
     <meta name="author" content="Daniel Suárez de la Roza"/>
@@ -104,12 +104,15 @@ function verTop10($top10) {
         <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos </a>
         >> Semáforo</p>
 
+        <h2>Juegos</h2>
         <nav>
             <a href="memoria.html">Memoria</a>
             <a href="semaforo.php">Semáforo</a>
             <a href="api.html">Api</a>
             <a href="gestion.php">Gestión</a>
         </nav>
+
+        <script src="js/semaforo.js"></script>
 
         <?php
             if (count ($_POST) > 0){
@@ -131,8 +134,6 @@ function verTop10($top10) {
                 echo '</aside>';
             }
             ?>
-    
     </main>
-    <script src="js/semaforo.js"></script>
 </body>
 </html>
