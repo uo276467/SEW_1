@@ -68,8 +68,8 @@ class Memoria{
             article.setAttribute("data-element", item.element)
 
             //Crear el encabezado
-            const text = document.createElement("h3")
-            text.textContent = "Tarjeta de memoria"
+            const text = document.createElement("h4")
+            text.textContent = "Click para voltear"
             article.appendChild(text)
 
             //Crear la imagen

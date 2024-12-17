@@ -11,7 +11,8 @@ section {
 
 
 /*Especificidad 002*/
-section h3 {
+section h3,
+section h4 {
     flex: 100%;
     text-align: center;
     margin-bottom: 0em;
@@ -49,13 +50,13 @@ article[data-state=revealed] {
 }
 
 /*Especifidad 012*/
-article[data-state=revealed] h3,
+article[data-state=revealed] h4,
 article[data-state=revealed] img{
     background-color: aliceblue;
 }
 
 /*Especifidad 002*/
-article h3,
+article h4,
 article img {
     margin: 0;
     width: 100%;
@@ -69,7 +70,7 @@ article img {
 }
 
 /*Especifidad 002*/
-article h3 {
+article h4 {
     display: flex;
     flex-direction: row;
     align-items: center;
