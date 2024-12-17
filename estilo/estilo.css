@@ -95,14 +95,6 @@ dl dd{
     font-size: 0.9em;
 }
 
-/* label{
-    font-size: 0.7em;
-    text-decoration: none;
-}
-input {
-    text-decoration: none;
-} */
-
 /* Tabla */
 
 /*Especificidad 001*/
@@ -135,13 +127,19 @@ tr:nth-child(even) {
 
 /*Especificidad 001*/
 video {
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 
 /*Especificidad 002*/
 picture img {
     width: auto;
+    height: auto;
+}
+
+/*Especificidad 002*/
+li img {
+    width: 40%;
     height: auto;
 }
 
