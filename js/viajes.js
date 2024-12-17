@@ -105,7 +105,7 @@ function initMapaDinamico() {
 
 const slides = document.querySelectorAll("img");
 
-const nextSlide = document.querySelector("button:nth-of-type(1)");
+const nextSlide = document.querySelector("article button:nth-of-type(1)");
 
 let curSlide = 3;
 let maxSlide = slides.length - 1;
@@ -123,7 +123,7 @@ nextSlide.addEventListener("click", function () {
   });
 });
 
-const prevSlide = document.querySelector("button:nth-of-type(2)");
+const prevSlide = document.querySelector("article button:nth-of-type(2)");
 
 prevSlide.addEventListener("click", function () {
   if (curSlide === 0) {

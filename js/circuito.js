@@ -42,30 +42,45 @@ function recorrerNodos(nodo) {
     if (nodo.nodeType === Node.ELEMENT_NODE) {
         html += "<li><strong>" + nodo.nodeName + "</strong>";
 
-        if (nodo.attributes && nodo.attributes.length > 0) {
-            html += "<ul>"; // ✅ El <ul> está correctamente dentro del <li>
+        if (nodo.nodeName.toLowerCase() === "referencia" && nodo.getAttribute("enlace")) {
+            const enlace = nodo.getAttribute("enlace");
+            html += "<ul><li><a href='" + enlace + "' style='color: blue;' target='_blank'>Enlace</a></li></ul>";
+        }
+        else if (nodo.nodeName.toLowerCase() === "foto" && nodo.getAttribute("enlace")) {
+            const enlace = nodo.getAttribute("enlace");
+            html += "<ul><li><img src='" + enlace + "' alt='Foto'></li></ul>";
+        }
+        else if (nodo.nodeName.toLowerCase() === "vídeo" && nodo.getAttribute("enlace")) {
+            const enlace = nodo.getAttribute("enlace");
+            html += "<ul><li><video controls=''><source src='" + enlace + "' type='video/mp4'></video></li></ul>";
+        }
+        else if (nodo.attributes && nodo.attributes.length > 0) {
+            html += "<ul>";
             Array.from(nodo.attributes).forEach(attr => {
                 html += "<li><strong>" + attr.name + ":</strong> " + attr.value + "</li>";
             });
             html += "</ul>";
         }
 
+        // Procesar los nodos hijos
         if (nodo.childNodes && nodo.childNodes.length > 0) {
-            html += "<ul>"; // ✅ Este <ul> ahora está dentro de un <li>
+            html += "<ul>";
             Array.from(nodo.childNodes).forEach(childNode => {
                 if (childNode.nodeType === Node.TEXT_NODE && childNode.nodeValue.trim() !== "") {
                     html += "<li>" + childNode.nodeValue.trim() + "</li>";
                 } else if (childNode.nodeType === Node.ELEMENT_NODE) {
-                    html += recorrerNodos(childNode); // Se sigue llamando de forma recursiva
+                    html += recorrerNodos(childNode);
                 }
             });
             html += "</ul>";
         }
 
-        html += "</li>"; // Cierra el <li> actual
+        html += "</li>";
     }
     return html;
 }
+
+
 
 
 function leerArchivoKML(archivo) {

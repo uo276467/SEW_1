@@ -15,6 +15,7 @@ section h3 {
     flex: 100%;
     text-align: center;
     margin-bottom: 0em;
+    margin-top: 0em;
     font-size: 1.5em;
 }
 
@@ -45,6 +46,12 @@ section article {
 article[data-state=flip],
 article[data-state=revealed] {
     transform: rotateY(180deg);
+}
+
+/*Especifidad 012*/
+article[data-state=revealed] h3,
+article[data-state=revealed] img{
+    background-color: aliceblue;
 }
 
 /*Especifidad 002*/
